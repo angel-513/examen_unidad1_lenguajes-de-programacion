@@ -24,13 +24,13 @@ class DirectorioController extends Controller
     }
 
     function eliminarDirectorio($codigoEntrada){
-        $directorio = Directorio::find($codigoEntrada);
+        $directorio = Directorio::where('codigoEntrada', $codigoEntrada);
 
         return view('eliminar', compact('directorio'));
     }
 
     function confirmacionEliminacion($codigoEntrada){
-        $directorio = Directorio::find($codigoEntrada);
+        $directorio = Directorio::where('codigoEntrada', $codigoEntrada);
         $contactos = Contacto::all()->where('codigoEntrada', $codigoEntrada);
 
         foreach ($contactos as $item) {
@@ -58,8 +58,8 @@ class DirectorioController extends Controller
         return redirect()->route('directorio.inicio');
     }
 
-    function buscarDirectorioByCorreo($correo) {
-        $directorio = Directorio::where('correo', $correo)->first();
+    function buscarDirectorioByCorreo(Request $request) {
+        $directorio = Directorio::where('correo', $request->input("correo"))->first();
         
         if($directorio != null){
             $contactos = Contacto::all()->where('codigoEntrada', $directorio->codigoEntrada);

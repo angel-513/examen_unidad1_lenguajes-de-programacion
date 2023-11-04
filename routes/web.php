@@ -23,12 +23,14 @@ Route::get('/directorio', [DirectorioController::class, 'listarDirectorios'])->n
 
 Route::get('/directorio/buscar', [DirectorioController::class, 'buscarDirectorio'])->name('directorio.buscar');
 
-Route::get('/directorio/contactos', [DirectorioController::class, 'verContactos'])->name('directorio.contactos');
+Route::get('/directorio/contactos/{codigoEntrada}', [DirectorioController::class, 'verContactos'])->name('directorio.contactos');
 
-Route::get('/directorio/eliminar', [DirectorioController::class, 'eliminarDirectorio'])->name('directorio.eliminar');
+Route::get('/directorio/eliminar/{codigoEntrada}', [DirectorioController::class, 'eliminarDirectorio'])->name('directorio.eliminar');
 
-Route::get('/directorio/confirmarEliminacion', [DirectorioController::class, 'confirmacionEliminacion'])->name('directorio.confirmarEliminacion');
+Route::get('/directorio/confirmarEliminacion/{codigoEntrada}', [DirectorioController::class, 'confirmacionEliminacion'])->name('directorio.confirmarEliminacion');
 
 Route::get('/directorio/agregar', [DirectorioController::class, 'agregarDirectorio'])->name('directorio.crear');
 
 Route::get('/directorio/guardar', [DirectorioController::class, 'guardarDirectorio'])->name('directorio.guardar');
+
+Route::get('/directorio/buscarInput/{correo}', [DirectorioController::class, 'buscarDirectorioByCorreo'])->name('directorio.buscarInput');
