@@ -28,11 +28,11 @@
             </thead>
             <tbody>                
                 <tr>
-                    <th scope="row">11</th>
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>jdoe@gmail.com</td>
-                    <td>999</td>
+                    <th scope="row">{{$directorio->codigoEntrada}}</th>
+                    <td>{{$directorio->nombre}}</td>
+                    <td>{{$directorio->apellido}}</td>
+                    <td>{{$directorio->correo}}</td>
+                    <td>{{$directorio->telefono}}</td>
                   </tr>
                 
               
@@ -43,8 +43,8 @@
         
         </div>
         <div class="modal-footer">
-          <a href="#" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</a>          
-          <a href="#" class="btn btn-danger" data-bs-dismiss="modal">Confirmar</a>          
+          <a href="#" class="btn btn-secondary" data-bs-dismiss="modal" href=" {{ route('directorio.inicio') }} ">Cancelar</a>          
+          <a href="#" class="btn btn-danger" data-bs-dismiss="modal" href=" {{ route('directorio.confirmarEliminacion', $directorio->codigoEntrada) }} ">Confirmar</a>          
         </div>
       </div>
     </div>

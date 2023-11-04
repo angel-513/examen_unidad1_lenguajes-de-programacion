@@ -44,11 +44,11 @@
                             <div class="card-body">
                                 <p class="card-text">
                                     <label for="">C&oacute;digo</label>
-                                    <input type="text" class="form-control" readonly>
+                                    <input type="text" class="form-control" readonly value="{{ $directorio->codigoEntrada }}">
                                     <label for="">Nombre</label>
-                                    <input type="text" class="form-control" readonly>
+                                    <input type="text" class="form-control" readonly value="{{ $directorio->nombre }}">
                                     <label for="">Apellido</label>
-                                    <input type="text" class="form-control" readonly>
+                                    <input type="text" class="form-control" readonly value="{{ $directorio->apellido }}">
 
                                     <p>
                                         <button class="btn btn-primary">Agregar nuevo contacto</button>
@@ -64,18 +64,18 @@
                                             <th scope="col">Eliminar</th>
                                         </thead>
                                         <tbody>
+                                            @foreach ($contactos as $item)
                                                 <tr>
-                                                    <td>1</td>                                                    
-                                                    <td>Julio</td>
-                                                    <td>Cortez</td>
-                                                    <td>9999</td>                                                    
+                                                    <td>{{$item->id}}</td>                                                    
+                                                    <td>{{$item->nombre}}</td>
+                                                    <td>{{$item->apellido}}</td>
+                                                    <td>{{$item->telefono}}</td>                                                    
                                                     <td>
                                                         <a href="#" class="btn btn-danger">Eliminar</a>
                                                     </td>
                                                 </tr>
+                                            @endforeach
                                         </tbody>
-
-                                    
                                 </p>
                             </div>
                         </div>
