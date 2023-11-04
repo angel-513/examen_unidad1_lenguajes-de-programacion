@@ -29,10 +29,14 @@ Route::get('/directorio/eliminar/{codigoEntrada}', [DirectorioController::class,
 
 Route::get('/directorio/confirmarEliminacion/{codigoEntrada}', [DirectorioController::class, 'confirmacionEliminacion'])->name('directorio.confirmarEliminacion');
 
-Route::get('/directorio/agregar', [DirectorioController::class, 'agregarDirectorio'])->name('directorio.crear');
+Route::post('/directorio/agregar', [DirectorioController::class, 'agregarDirectorio'])->name('directorio.crear');
 
 Route::get('/directorio/guardar', [DirectorioController::class, 'guardarDirectorio'])->name('directorio.guardar');
 
 Route::get('/directorio/buscarInput', [DirectorioController::class, 'buscarDirectorioByCorreo'])->name('directorio.buscarInput');
+
+Route::get('/contacto/agregar', [ContactosController::class, 'agregarContacto'])->name('contacto.agregar');
+
+Route::post('/contacto/guardar', [ContactoController::class, 'guardarContacto'])->name('contacto.guardar');
 
 Route::get('/contacto/eliminar/{codigoEntrada}', [ContactosController::class, 'eliminarContacto'])->name('contacto.eliminar');

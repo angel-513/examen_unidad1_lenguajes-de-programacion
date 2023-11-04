@@ -48,10 +48,10 @@ class DirectorioController extends Controller
     function guardarDirectorio(Request $request){
         $directorio = new Directorio();
         $directorio->codigoEntrada = $request->input("codigo");
-        $directorio->codigoEntrada = $request->input("nombre");
-        $directorio->codigoEntrada = $request->input("apellido");
-        $directorio->codigoEntrada = $request->input("telefono");
-        $directorio->codigoEntrada = $request->input("correo");
+        $directorio->nombre = $request->input("nombre");
+        $directorio->apellido = $request->input("apellido");
+        $directorio->telefono = $request->input("telefono");
+        $directorio->correo = $request->input("correo");
 
         $directorio->save();
 

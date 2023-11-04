@@ -51,7 +51,7 @@
                                     <input type="text" class="form-control" readonly value="{{ $directorio->apellido }}">
 
                                     <p>
-                                        <button class="btn btn-primary" href="{{ route('') }}">Agregar nuevo contacto</button>
+                                        <button class="btn btn-primary" href="{{ route('contacto.agregar') }}">Agregar nuevo contacto</button>
                                         <a href="#" class="btn btn-info" href="{{ route('directorio.inicio') }}">Regresar</a>
                                     </p>
 

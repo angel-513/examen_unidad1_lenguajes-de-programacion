@@ -43,19 +43,21 @@
                             <h3 class="card-header">Agregar Contacto</h3>
                             <div class="card-body">
                                 <p class="card-text">
-                                    <form>
+                                    <form method="POST" action="{{ route('contacto.guardar') }}">
+                                        @csrf
+                                        @method('POST')
+
                                         <label for="">C&oacute;digo de entrada</label>
-                                        <input type="text" name="codigo" class="form-control" readonly>
+                                        <input type="text" name="codigo" id="codigo" class="form-control" readonly>
                                         <label for="">Nombre</label>
-                                        <input type="text" name="nombre" class="form-control">
+                                        <input type="text" name="nombre" id="nombre" class="form-control">
                                         <label for="">Apellido</label>
-                                        <input type="text" name="apellido" class="form-control">
+                                        <input type="text" name="apellido" id="apellido" class="form-control">
                                         <label for="">Tel&eacute;fono</label>
-                                        <input type="text" name="telefono" class="form-control">
+                                        <input type="text" name="telefono" id="telefono" class="form-control">
                                         
                                         <button class="btn btn-primary">Guardar</button>
-                                        <a href="#" class="btn btn-info">Regresar</a>
-                                        
+                                        <a href="#" class="btn btn-info" href="{{ route('directorio.inicio') }}">Regresar</a>
                                     </form>
                                 </p>
                             </div>
