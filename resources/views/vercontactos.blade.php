@@ -51,8 +51,8 @@
                                     <input type="text" class="form-control" readonly value="{{ $directorio->apellido }}">
 
                                     <p>
-                                        <button class="btn btn-primary">Agregar nuevo contacto</button>
-                                        <a href="#" class="btn btn-info">Regresar</a>
+                                        <button class="btn btn-primary" href="{{ route('') }}">Agregar nuevo contacto</button>
+                                        <a href="#" class="btn btn-info" href="{{ route('directorio.inicio') }}">Regresar</a>
                                     </p>
 
                                     <table class="table">
@@ -71,7 +71,7 @@
                                                     <td>{{$item->apellido}}</td>
                                                     <td>{{$item->telefono}}</td>                                                    
                                                     <td>
-                                                        <a href="#" class="btn btn-danger">Eliminar</a>
+                                                        <a href="#" class="btn btn-danger" href="{{ route('contacto.eliminar', $item->id) }}">Eliminar</a>
                                                     </td>
                                                 </tr>
                                             @endforeach

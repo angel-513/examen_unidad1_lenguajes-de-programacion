@@ -33,4 +33,6 @@ Route::get('/directorio/agregar', [DirectorioController::class, 'agregarDirector
 
 Route::get('/directorio/guardar', [DirectorioController::class, 'guardarDirectorio'])->name('directorio.guardar');
 
-Route::get('/directorio/buscarInput/{correo}', [DirectorioController::class, 'buscarDirectorioByCorreo'])->name('directorio.buscarInput');
+Route::get('/directorio/buscarInput', [DirectorioController::class, 'buscarDirectorioByCorreo'])->name('directorio.buscarInput');
+
+Route::get('/contacto/eliminar/{codigoEntrada}', [ContactosController::class, 'eliminarContacto'])->name('contacto.eliminar');
